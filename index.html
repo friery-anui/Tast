@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Thông Tin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">MyLogo</div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#banner">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#testimonials">Khách hàng</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn">Liên hệ ngay</a>
+            <!-- Nút menu mobile -->
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner" class="banner">
+        <div class="banner-content">
+            <h1>Giải pháp thông tin hiện đại & tối giản</h1>
+            <p>Chúng tôi mang đến sự chuyên nghiệp và hiệu quả cho doanh nghiệp của bạn.</p>
+            <a href="#about" class="btn">Tìm hiểu thêm</a>
+        </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-text">
+                <h2>Về chúng tôi</h2>
+                <p>Chúng tôi là đơn vị chuyên cung cấp giải pháp thông tin hiện đại với thiết kế tinh gọn, dễ sử dụng và mang tính ứng dụng cao.</p>
+                <p>Sứ mệnh của chúng tôi là giúp doanh nghiệp tiếp cận thông tin một cách trực quan, nhanh chóng và hiệu quả.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://via.placeholder.com/400x300" alt="Giới thiệu">
+            </div>
+        </div>
+    </section>
+
+    <!-- Dịch vụ -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Dịch vụ của chúng tôi</h2>
+            <div class="service-list">
+                <div class="service-item">🌐 Thiết kế web</div>
+                <div class="service-item">📱 Ứng dụng di động</div>
+                <div class="service-item">💡 Giải pháp CNTT</div>
+                <div class="service-item">🔒 Bảo mật thông tin</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Khách hàng nói gì?</h2>
+            <div class="testimonial-list">
+                <div class="testimonial-item">
+                    <p>"Dịch vụ tuyệt vời, hỗ trợ nhanh chóng!"</p>
+                    <span>- Nguyễn Văn A</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Thiết kế hiện đại và rất dễ sử dụng."</p>
+                    <span>- Trần Thị B</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Giải pháp mang lại hiệu quả vượt mong đợi."</p>
+                    <span>- Lê Văn C</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form liên hệ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Liên hệ với chúng tôi</h2>
+            <form>
+                <input type="text" placeholder="Họ và tên" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Nội dung" required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Website Thông Tin. All rights reserved.</p>
+            <div class="social">
+                <a href="#">Facebook</a> | 
+                <a href="#">LinkedIn</a> | 
+                <a href="mailto:info@email.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        // Hiệu ứng mở menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Cuộn mượt khi click menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href"))
+                    .scrollIntoView({ behavior: "smooth" });
+                nav.classList.remove("active"); // Tự đóng menu trên mobile
+            });
+        });
+    </script>
+</body>
+</html>
